@@ -42,10 +42,10 @@ app.use(express.static('public'));
 
 var url = 'mongodb://localhost:27017';
 var dbName = 'test'
+var port = process.env.port || 3000;
 
 
-
-var server = app.listen(3000, function () {
+var server = app.listen(port, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Listening at http://%s:%s', host, port);
