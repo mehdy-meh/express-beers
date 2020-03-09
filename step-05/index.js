@@ -40,9 +40,9 @@ app.use('/beers/img', express.static('img'));
 app.use('/img', express.static('img'));
 app.use(express.static('public'));
 
-var url = 'mongodb://localhost:27017';
-var dbName = 'test'
+var url = process.env.MONGODB_ADDON_URI;
 
+var dbName = process.env.MONGODB_ADDON_DB;
 
 var server = app.listen(process.env.PORT, function () {
   var host = server.address().address;
